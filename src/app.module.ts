@@ -5,6 +5,7 @@ import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DatabaseModule } from './database/database.module';
+import { RacingModule } from './racing/racing.module';
 import config from './config'; // llamo tambien al config aca
 
 @Module({
@@ -16,7 +17,8 @@ import config from './config'; // llamo tambien al config aca
       load: [config],
       isGlobal: true,
     }),
-  ], 
+    RacingModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
