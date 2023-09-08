@@ -9,7 +9,7 @@ export class CarsService {
   constructor(@InjectModel(Car.name) private carModel: Model<Car>) {}
 
   findAll() {
-    return this.carModel.find().populate('engines').exec();
+    return this.carModel.find().exec();
   }
 
   async findOne(id: string) {
